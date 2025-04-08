@@ -1,0 +1,35 @@
+name: Upstream Sync
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: "8 8 * * *"
+  workflow_dispatch:
+
+jobs:
+  sync-with-upstream:
+    name: Sync with Upstream
+    runs-on: ubuntu-latest
+    if: ${{ github.event.repository.fork }}
+
+    steps:
+      - name: Checkout target repo
+        uses: actions/checkout@v4
+
+      - name: Sync Upstream
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SRC_REPO: xjasonlyu/vercel-deeplx
+          SYNC_BRANCH: main
+        run: |
+          gh repo sync ${{ github.repository }} \
+            --branch "$SYNC_BRANCH" \
+            --source "$SRC_REPO"
+
+      - name: Check for Failure
+        if: failure()
+        run: |
+          echo "[Error] Sync failed. Manual intervention required."
+          exit 1
