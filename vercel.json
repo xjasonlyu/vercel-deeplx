@@ -1,4 +1,10 @@
 {
+  "functions": {
+    "api/entrypoint.go": {
+      "memory": 1024,
+      "maxDuration": 30
+    }
+  },
   "rewrites": [
     {
       "source": "/(.*)",
