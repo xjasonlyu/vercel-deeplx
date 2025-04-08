@@ -1,10 +1,15 @@
 {
-  "functions": {
-    "api/entrypoint.go": {
-      "memory": 1024,
-      "maxDuration": 30
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
     }
-  },
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
