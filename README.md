@@ -35,9 +35,9 @@ This will start a local dev server with the API running on `http://localhost:300
 
 | Variable     | Description                           | Default |
 |--------------|---------------------------------------|---------|
-| `TOKEN`      | Access token to protect your API      | `null`  |
-| `DL_SESSION` | DeepL Pro Account `dl_session` cookie | `null`  |
-| `PROXY`	     | The http proxy server address         | 	`null` |
+| `TOKEN`      | Access token to protect your API      | `NULL`  |
+| `PROXY`	     | The http proxy server address         | 	`NULL` |
+| `DL_SESSION` | DeepL Pro Account `dl_session` cookie | `NULL`  |
 
 The above environment variables are optional and only need to be configured on Vercel when required.
 See [variables](https://deeplx.owo.network/install/variables.html) for more details.
@@ -74,17 +74,17 @@ For more detailed cURL usage and examples, see [here](https://deeplx.owo.network
 
 ## Auto Update
 
-- To manually update, you need to go to the **Actions** tab and run the workflow.
+- To manually update, go to the **Actions** tab and run the workflow.
 - This workflow is also automatically triggered on a daily basis.
 
 ## Credits
 
-- [OwO-Network](https://github.com/OwO-Network) for the project [DeepLX](https://github.com/OwO-Network/DeepLX).
-- [bropines](https://github.com/bropines) for inspiration [Deeplx-vercel](https://github.com/bropines/Deeplx-vercel).
+- [OwO-Network/DeepLX](https://github.com/OwO-Network/DeepLX)
+- [bropines/Deeplx-vercel](https://github.com/bropines/Deeplx-vercel)
 
 ## Contributing
 
-Contributions are welcome! If you have a suggestion or fix, please fork the repository and submit a pull request.
+Contributions are welcome! If you have a suggestion or fix, please fork the repository and submit a PR.
 
 ## License
 
