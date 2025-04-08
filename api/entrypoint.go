@@ -3,19 +3,22 @@ package api
 import (
 	"net/http"
 
+	deeplx "github.com/OwO-Network/DeepLX/service"
 	"github.com/gin-gonic/gin"
 )
 
-var app *gin.Engine
+var (
+	cfg *deeplx.Config
+	app *gin.Engine
+)
 
 func init() {
-	app = gin.Default()
-
-	app.GET("/", func(c *gin.Context) {
-		c.String(http.StatusOK, "Hello World!")
-	})
+	cfg = deeplx.InitConfig()
+	app = deeplx.Router(cfg)
 }
 
 func Entrypoint(w http.ResponseWriter, r *http.Request) {
 	app.ServeHTTP(w, r)
 }
+
+var _ http.HandlerFunc = Entrypoint
