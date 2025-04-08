@@ -1,9 +1,9 @@
 module vercel-deeplx
 
-go 1.24.0
+go 1.23.0
 
 require (
-	github.com/OwO-Network/DeepLX v1.0.7-0.20250408175320-0a9ff6b58260
+	github.com/OwO-Network/DeepLX v1.0.8-0.20250408192804-4cee0f3031f8
 	github.com/gin-gonic/gin v1.10.0
 )
 
