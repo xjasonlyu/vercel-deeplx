@@ -15,6 +15,7 @@ var (
 func init() {
 	cfg = deeplx.InitConfig()
 	app = deeplx.Router(cfg)
+	gin.SetMode(gin.ReleaseMode)
 }
 
 func Entrypoint(w http.ResponseWriter, r *http.Request) {
